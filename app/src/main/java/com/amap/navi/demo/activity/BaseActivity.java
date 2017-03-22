@@ -1,7 +1,7 @@
 package com.amap.navi.demo.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Window;
 import android.widget.Toast;
@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class BaseActivity extends Activity implements AMapNaviListener, AMapNaviViewListener {
+public class BaseActivity extends AppCompatActivity implements AMapNaviListener, AMapNaviViewListener {
 
     protected AMapNaviView mAMapNaviView;
     protected AMapNavi mAMapNavi;
