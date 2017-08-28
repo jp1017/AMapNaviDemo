@@ -57,8 +57,8 @@ public class CustomDirectionViewActivity extends BaseActivity {
     }
 
     @Override
-    public void onCalculateRouteSuccess() {
-        super.onCalculateRouteSuccess();
+    public void onCalculateRouteSuccess(int[] ints) {
+        super.onCalculateRouteSuccess(ints);
         mAMapNavi.startNavi(NaviType.EMULATOR);
     }
 }

@@ -231,6 +231,11 @@ public class IntelligentBroadcastActivity extends Activity implements AMapNaviLi
     }
 
     @Override
+    public void onGetNavigationText(String s) {
+
+    }
+
+    @Override
     public void onEndEmulatorNavi() {
 
     }
@@ -241,9 +246,7 @@ public class IntelligentBroadcastActivity extends Activity implements AMapNaviLi
     }
 
     @Override
-    public void onCalculateRouteSuccess() {
-
-    }
+    public void onCalculateRouteSuccess(int[] ints) {}
 
     @Override
     public void onCalculateRouteFailure(int i) {
@@ -311,11 +314,6 @@ public class IntelligentBroadcastActivity extends Activity implements AMapNaviLi
 
     @Override
     public void hideLaneInfo() {
-
-    }
-
-    @Override
-    public void onCalculateMultipleRoutesSuccess(int[] ints) {
 
     }
 

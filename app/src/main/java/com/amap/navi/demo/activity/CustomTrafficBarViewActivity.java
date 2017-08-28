@@ -95,8 +95,8 @@ public class CustomTrafficBarViewActivity extends BaseActivity {
     }
 
     @Override
-    public void onCalculateRouteSuccess() {
-        super.onCalculateRouteSuccess();
+    public void onCalculateRouteSuccess(int[] ints) {
+        super.onCalculateRouteSuccess(ints);
 
         if (mAMapNavi != null) {
             naviPath = mAMapNavi.getNaviPath();

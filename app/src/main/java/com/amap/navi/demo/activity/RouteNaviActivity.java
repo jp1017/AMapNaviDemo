@@ -118,15 +118,16 @@ public class RouteNaviActivity extends Activity implements AMapNaviListener, AMa
     }
 
     @Override
+    public void onGetNavigationText(String s) {
+
+    }
+
+    @Override
     public void onEndEmulatorNavi() {
     }
 
     @Override
     public void onArriveDestination() {
-    }
-
-    @Override
-    public void onCalculateRouteSuccess() {
     }
 
     @Override
@@ -228,9 +229,10 @@ public class RouteNaviActivity extends Activity implements AMapNaviListener, AMa
     }
 
     @Override
-    public void onCalculateMultipleRoutesSuccess(int[] ints) {
+    public void onCalculateRouteSuccess(int[] ints) {
 
     }
+
 
     @Override
     public void notifyParallelRoad(int i) {

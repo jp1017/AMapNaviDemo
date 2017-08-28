@@ -105,17 +105,17 @@ public class SimpleNaviActivity extends Activity implements AMapNaviListener {
     }
 
     @Override
+    public void onGetNavigationText(String s) {
+
+    }
+
+    @Override
     public void onEndEmulatorNavi() {
 
     }
 
     @Override
     public void onArriveDestination() {
-
-    }
-
-    @Override
-    public void onCalculateRouteSuccess() {
 
     }
 
@@ -195,7 +195,7 @@ public class SimpleNaviActivity extends Activity implements AMapNaviListener {
     }
 
     @Override
-    public void onCalculateMultipleRoutesSuccess(int[] ints) {
+    public void onCalculateRouteSuccess(int[] ints) {
 
     }
 

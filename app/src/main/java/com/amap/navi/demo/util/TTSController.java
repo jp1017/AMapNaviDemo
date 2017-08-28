@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.amap.api.navi.MyNaviListener;
 import com.amap.api.navi.model.AMapLaneInfo;
+import com.amap.api.navi.model.AMapModelCross;
 import com.amap.api.navi.model.AMapNaviCameraInfo;
 import com.amap.api.navi.model.AMapNaviCross;
 import com.amap.api.navi.model.AMapNaviInfo;
@@ -17,6 +18,7 @@ import com.amap.api.navi.model.AMapServiceAreaInfo;
 import com.amap.api.navi.model.AimLessModeCongestionInfo;
 import com.amap.api.navi.model.AimLessModeStat;
 import com.amap.api.navi.model.AmapCarLocation;
+import com.amap.api.navi.model.InnerNaviInfo;
 import com.amap.api.navi.model.NaviInfo;
 import com.autonavi.tbt.TrafficFacilityInfo;
 import com.iflytek.cloud.ErrorCode;
@@ -191,10 +193,6 @@ public class TTSController implements MyNaviListener {
     }
 
     @Override
-    public void onCalculateRouteSuccess() {
-    }
-
-    @Override
     public void onEndEmulatorNavi() {
     }
 
@@ -203,6 +201,11 @@ public class TTSController implements MyNaviListener {
         if (wordList != null)
             wordList.addLast(arg1);
         handler.obtainMessage(CHECK_TTS_PLAY).sendToTarget();
+    }
+
+    @Override
+    public void onGetNavigationText(String s) {
+
     }
 
 
@@ -284,7 +287,7 @@ public class TTSController implements MyNaviListener {
     }
 
     @Override
-    public void onCalculateMultipleRoutesSuccess(int[] routeIds) {
+    public void onCalculateRouteSuccess(int[] ints) {
 
     }
 
@@ -326,6 +329,21 @@ public class TTSController implements MyNaviListener {
 
     @Override
     public void carProjectionChange(AmapCarLocation mCarProjectionChange) {
+
+    }
+
+    @Override
+    public void showModeCross(AMapModelCross aMapModelCross) {
+
+    }
+
+    @Override
+    public void hideModeCross() {
+
+    }
+
+    @Override
+    public void onInnerNaviInfoUpdate(InnerNaviInfo innerNaviInfo) {
 
     }
 

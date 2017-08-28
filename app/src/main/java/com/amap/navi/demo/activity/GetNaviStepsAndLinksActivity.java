@@ -49,8 +49,8 @@ public class GetNaviStepsAndLinksActivity extends BaseActivity {
     }
 
     @Override
-    public void onCalculateRouteSuccess() {
-        super.onCalculateRouteSuccess();
+    public void onCalculateRouteSuccess(int[] ints) {
+        super.onCalculateRouteSuccess(ints);
 
 
         //概览

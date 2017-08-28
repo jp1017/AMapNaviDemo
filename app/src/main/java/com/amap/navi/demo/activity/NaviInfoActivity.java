@@ -88,6 +88,11 @@ public class NaviInfoActivity extends Activity implements AMapNaviListener, AMap
     }
 
     @Override
+    public void onGetNavigationText(String s) {
+
+    }
+
+    @Override
     public void onEndEmulatorNavi() {
         //停止模拟导航回调
     }
@@ -95,11 +100,6 @@ public class NaviInfoActivity extends Activity implements AMapNaviListener, AMap
     @Override
     public void onArriveDestination() {
         //到达目的地回调
-    }
-
-    @Override
-    public void onCalculateRouteSuccess() {
-        //路径计算成功
     }
 
     @Override
@@ -224,8 +224,8 @@ public class NaviInfoActivity extends Activity implements AMapNaviListener, AMap
     }
 
     @Override
-    public void onCalculateMultipleRoutesSuccess(int[] ints) {
-        //多路线计算成功
+    public void onCalculateRouteSuccess(int[] ints) {
+
     }
 
     @Override

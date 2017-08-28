@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:2.3.3'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -16,6 +16,18 @@ allprojects {
     repositories {
         jcenter()
     }
+
+    //skip task: mockableAndroidJar
+    gradle.taskGraph.whenReady {
+        tasks.each { task ->
+            if (task.name == 'mockableAndroidJar'
+                    //todo 跳过测试Task
+                    || task.name.contains("Test")) {
+                task.enabled = false
+            }
+        }
+    }
+
 }
 
 task clean(type: Delete) {

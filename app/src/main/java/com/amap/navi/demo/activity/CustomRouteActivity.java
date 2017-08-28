@@ -76,7 +76,8 @@ public class CustomRouteActivity extends BaseActivity implements AMapNaviListene
 
 
     @Override
-    public void onCalculateRouteSuccess() {
+    public void onCalculateRouteSuccess(int[] lines) {
+        super.onCalculateRouteSuccess(lines);
 //        如果根据获取的导航路线来自定义绘制
         RouteOverLay routeOverlay = new RouteOverLay(mAMapNaviView.getMap(), mAMapNavi.getNaviPath(), this);
         routeOverlay.setStartPointBitmap(BitmapFactory.decodeResource(this.getResources(), R.drawable.r1));

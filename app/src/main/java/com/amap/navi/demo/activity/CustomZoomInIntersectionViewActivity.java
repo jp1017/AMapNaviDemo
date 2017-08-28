@@ -37,9 +37,16 @@ public class CustomZoomInIntersectionViewActivity extends BaseActivity implement
         mAMapNavi.calculateDriveRoute(sList, eList, null, PathPlanningStrategy.DRIVING_SHORTEST_DISTANCE);
     }
 
-    @Override
+/*    @Override
     public void onCalculateRouteSuccess() {
         super.onCalculateRouteSuccess();
         mAMapNavi.startNavi(NaviType.EMULATOR);
+    }*/
+
+    @Override
+    public void onCalculateRouteSuccess(int[] ints) {
+        super.onCalculateRouteSuccess(ints);
+        mAMapNavi.startNavi(NaviType.EMULATOR);
+
     }
 }

@@ -190,23 +190,17 @@ public class RoutePlanningActivity extends Activity implements AMapNaviListener,
     }
 
     @Override
-    public void onCalculateRouteSuccess() {
-        AMapNaviPath naviPath = aMapNavi.getNaviPath();
-        if (naviPath == null) {
-            return;
-        }
-        // 获取路径规划线路，显示到地图上
-        mRouteOverLay.setAMapNaviPath(naviPath);
-        mRouteOverLay.addToMap();
-    }
-
-    @Override
     public void onEndEmulatorNavi() {
 
     }
 
     @Override
     public void onGetNavigationText(int arg0, String arg1) {
+
+    }
+
+    @Override
+    public void onGetNavigationText(String s) {
 
     }
 
@@ -327,8 +321,14 @@ public class RoutePlanningActivity extends Activity implements AMapNaviListener,
     }
 
     @Override
-    public void onCalculateMultipleRoutesSuccess(int[] ints) {
-
+    public void onCalculateRouteSuccess(int[] ints) {
+        AMapNaviPath naviPath = aMapNavi.getNaviPath();
+        if (naviPath == null) {
+            return;
+        }
+        // 获取路径规划线路，显示到地图上
+        mRouteOverLay.setAMapNaviPath(naviPath);
+        mRouteOverLay.addToMap();
     }
 
     @Override

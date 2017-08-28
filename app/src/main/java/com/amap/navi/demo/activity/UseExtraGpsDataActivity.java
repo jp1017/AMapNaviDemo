@@ -67,7 +67,7 @@ public class UseExtraGpsDataActivity extends BaseActivity {
     }
 
     @Override
-    public void onCalculateRouteSuccess() {
+    public void onCalculateRouteSuccess(int[] routes) {
         mAMapNavi.startNavi(NaviType.GPS);
     }
 }

@@ -10,7 +10,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="8e7e24fb29cc1746551eaa5f55e888b1" />
+            android:value="31b2d87ffe4f2884c87fc745ae253e5a" />
 
         <activity
             android:name=".activity.IndexActivity"

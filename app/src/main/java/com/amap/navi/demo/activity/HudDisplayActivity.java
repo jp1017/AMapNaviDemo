@@ -142,6 +142,11 @@ public class HudDisplayActivity extends Activity implements AMapHudViewListener,
     }
 
     @Override
+    public void onGetNavigationText(String s) {
+
+    }
+
+    @Override
     public void onEndEmulatorNavi() {
 
     }
@@ -149,11 +154,6 @@ public class HudDisplayActivity extends Activity implements AMapHudViewListener,
     @Override
     public void onArriveDestination() {
 
-    }
-
-    @Override
-    public void onCalculateRouteSuccess() {
-        AMapNavi.getInstance(this).startNavi(NaviType.EMULATOR);
     }
 
     @Override
@@ -232,8 +232,8 @@ public class HudDisplayActivity extends Activity implements AMapHudViewListener,
     }
 
     @Override
-    public void onCalculateMultipleRoutesSuccess(int[] ints) {
-
+    public void onCalculateRouteSuccess(int[] ints) {
+        AMapNavi.getInstance(this).startNavi(NaviType.EMULATOR);
     }
 
     @Override

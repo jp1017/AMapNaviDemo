@@ -1,7 +1,7 @@
 package com.amap.navi.demo.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Window;
 import android.widget.Toast;
@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class BaseActivity extends AppCompatActivity implements AMapNaviListener, AMapNaviViewListener {
+public class BaseActivity extends Activity implements AMapNaviListener, AMapNaviViewListener {
 
     protected AMapNaviView mAMapNaviView;
     protected AMapNavi mAMapNavi;
@@ -118,6 +118,11 @@ public class BaseActivity extends AppCompatActivity implements AMapNaviListener,
     }
 
     @Override
+    public void onGetNavigationText(String s) {
+
+    }
+
+    @Override
     public void onEndEmulatorNavi() {
         //结束模拟导航
     }
@@ -125,11 +130,6 @@ public class BaseActivity extends AppCompatActivity implements AMapNaviListener,
     @Override
     public void onArriveDestination() {
         //到达目的地
-    }
-
-    @Override
-    public void onCalculateRouteSuccess() {
-        //路线计算成功
     }
 
     @Override
@@ -247,8 +247,8 @@ public class BaseActivity extends AppCompatActivity implements AMapNaviListener,
     }
 
     @Override
-    public void onCalculateMultipleRoutesSuccess(int[] ints) {
-        //多路径算路成功回调
+    public void onCalculateRouteSuccess(int[] ints) {
+
     }
 
     @Override

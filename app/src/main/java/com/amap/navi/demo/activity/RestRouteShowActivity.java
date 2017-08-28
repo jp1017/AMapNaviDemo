@@ -224,32 +224,6 @@ public class RestRouteShowActivity extends Activity implements AMapNaviListener,
     }
 
     @Override
-    public void onCalculateMultipleRoutesSuccess(int[] ints) {
-        //清空上次计算的路径列表。
-        routeOverlays.clear();
-        HashMap<Integer, AMapNaviPath> paths = mAMapNavi.getNaviPaths();
-        for (int i = 0; i < ints.length; i++) {
-            AMapNaviPath path = paths.get(ints[i]);
-            if (path != null) {
-                drawRoutes(ints[i], path);
-            }
-        }
-    }
-
-    @Override
-    public void onCalculateRouteSuccess() {
-        /**
-         * 清空上次计算的路径列表。
-         */
-        routeOverlays.clear();
-        AMapNaviPath path = mAMapNavi.getNaviPath();
-        /**
-         * 单路径不需要进行路径选择，直接传入－1即可
-         */
-        drawRoutes(-1, path);
-    }
-
-    @Override
     public void onCalculateRouteFailure(int arg0) {
         calculateSuccess = false;
         Toast.makeText(getApplicationContext(), "计算路线失败，errorcode＝" + arg0, Toast.LENGTH_SHORT).show();
@@ -400,6 +374,30 @@ public class RestRouteShowActivity extends Activity implements AMapNaviListener,
     }
 
     @Override
+    public void onCalculateRouteSuccess(int[] ints) {
+        /**
+         * 清空上次计算的路径列表。
+         */
+        routeOverlays.clear();
+        AMapNaviPath path = mAMapNavi.getNaviPath();
+        /**
+         * 单路径不需要进行路径选择，直接传入－1即可
+         */
+        drawRoutes(-1, path);
+
+
+        //清空上次计算的路径列表。
+        routeOverlays.clear();
+        HashMap<Integer, AMapNaviPath> paths = mAMapNavi.getNaviPaths();
+        for (int i = 0; i < ints.length; i++) {
+            AMapNaviPath mapNaviPath = paths.get(ints[i]);
+            if (mapNaviPath != null) {
+                drawRoutes(ints[i], mapNaviPath);
+            }
+        }
+    }
+
+    @Override
     public void notifyParallelRoad(int arg0) {
 
 
@@ -426,6 +424,11 @@ public class RestRouteShowActivity extends Activity implements AMapNaviListener,
     @Override
     public void onGetNavigationText(int arg0, String arg1) {
 
+
+    }
+
+    @Override
+    public void onGetNavigationText(String s) {
 
     }
 
